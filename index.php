@@ -6,7 +6,7 @@
 		<script language="javascript" src="Script/GestionListe.js"></script>
 		
 		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<script src="js/c3.js"></script>
+		<script src="Script/c3.js"></script>
 
     </head>
     <body style="min-height: 100%: 100%;display:table; width:100%; height:100%; border-collapse:collapse; text-align: center; vertical-align: middle;">
@@ -81,17 +81,6 @@
 			//echo 'C : ' . $resultatC[0] . '<br>';			
 		}
 		
-		function js_str($s)
-		{
-			return '"' . addcslashes($s, "\0..\37\"\\") . '"';
-		}
-
-		function js_array($array)
-		{
-			$temp = array_map('js_str', $array);
-			return '[' . implode(',', $temp) . ']';
-		}
-		
 	?>
 	<div style="background-color:AliceBlue; height:10%">
 		<form name="monFormulaire" action="index.php" method="GET">
@@ -111,7 +100,7 @@
 		var json = <?php echo json_encode($xml_listeregdptcom); ?>;
 		ListeRegion(json);
 		
-		var listCandidats = <?php //echo json_encode($xml_listecandidats); ?>;
+		var listCandidats = <?php echo json_encode($xml_listecandidats); ?>;
 		console.log(listCandidats);
 		var TabListeCandidats = ListeCandidat(listCandidats);
 		//var TabListeCandidats = ['x','1','2','3','4','5','6','7','8','9','10','11','12'];
@@ -124,7 +113,7 @@
 	</div>
 	
 	<script type="text/javascript">
-	if(!<?php echo empty($resultatN); ?>)
+	if(!<?php echo count($resultatN[1]); ?>)
 	{
 		var StringN =<?php echo json_encode($resultatN[1]);?>;
 		StringN = StringN.substring(1,StringN.length-1);
@@ -137,7 +126,7 @@
 	{
 		//var TabN = new Array {};
 	}
-	if(!<?php echo empty($resultatR); ?>)
+	if(!<?php echo count($resultatR[1]); ?> !=0)
 	{
 		var StringR =<?php echo json_encode($resultatR[1]);?>;
 		StringR = StringR.substring(1,StringR.length-1);
@@ -148,7 +137,7 @@
 	{
 		//var TabR = new Array {};
 	}
-	if(!<?php echo  empty($resultatD); ?>)
+	if(<?php echo  count($resultatD[1]); ?> !=0)
 	{
 		var StringD =<?php echo json_encode($resultatD[1]);?>;
 		StringD = StringD.substring(1,StringD.length-1);
@@ -160,7 +149,7 @@
 		//var TabD = new Array {};
 	}
 	
-	if(!<?php echo  empty($resultatC); ?>)
+	if(<?php echo  count($resultatC[1]); ?>  != 0)
 	{
 		var StringC =<?php echo json_encode($resultatC[1]);?>;
 		console.log("log stringC :" + StringC);
