@@ -238,7 +238,7 @@ function remplirDep(code)
 			console.log(Departement);
 			formulaire.choixDepartement.options.length = 2;
 			
-			formulaire.choixDepartement.options[0].text = "-- choisissez un Département";
+			formulaire.choixDepartement.options[0].text = "-- choisissez un Departement";
 			formulaire.choixDepartement.options[0].value = 0;
 			
 			formulaire.choixDepartement.options[1].text = Departement.LibDpt;
@@ -250,7 +250,7 @@ function remplirDep(code)
 	{
 		formulaire.choixDepartement.options.length = 1;
 		formulaire.choixDepartement.options[0].value = 0;
-		formulaire.choixDepartement.options[0].text = "-- choisissez un Départment";
+		formulaire.choixDepartement.options[0].text = "-- choisissez un Department";
 	}
 }
 
