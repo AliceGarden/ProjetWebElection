@@ -196,7 +196,7 @@ function ListeRegion(Json)
 	
 	monFormulaire.choixRegion.options.length = Region.length +1;	
 	
-	formulaire.choixRegion.options[0].text = "-- choisissez une Région";
+	formulaire.choixRegion.options[0].text = "-- choisissez une Region";
     formulaire.choixRegion.options[0].value = 0;
 	
     for (i = 0; i< Region.length; i++)
@@ -224,7 +224,7 @@ function remplirDep(code)
 		{
 			monFormulaire.choixDepartement.options.length = Departement.length + 1;
 			
-			formulaire.choixDepartement.options[0].text = "-- choisissez un Département";
+			formulaire.choixDepartement.options[0].text = "-- choisissez un Departement";
 			formulaire.choixDepartement.options[0].value = 0;
 			
 			for (i=0; i<Departement.length; i++)
@@ -277,7 +277,7 @@ function remplirCom(code)
 	  {
 			monFormulaire.choixCommune.options.length = Commune.length + 1;
 			
-			formulaire.choixCommune.options[0].text = "-- choisissez un Département";
+			formulaire.choixCommune.options[0].text = "-- choisissez une Commune";
 			formulaire.choixCommune.options[0].value = 0;
 			
 			for (i=0; i<Commune.length; i++)
@@ -316,7 +316,8 @@ function remplirCom(code)
 	
 	for (i = 0; i< Candidat.length; i++)
 	{
-		var string = Candidat[i].CivilitePsn + ' ' + Candidat[i].PrenomPsn + ' ' + Candidat[i].NomPsn;
+		//var string = Candidat[i].CivilitePsn + ' ' + Candidat[i].PrenomPsn + ' ' + Candidat[i].NomPsn;
+		var string = Candidat[i].NomPsn;
 		TabCandidat.push(string);
 	}
 	

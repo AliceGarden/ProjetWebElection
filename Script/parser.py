@@ -108,8 +108,8 @@ def cam(m,i,a,v,b,n,e):
     tab.append(bb)
     tab.append(nn)
     tab.append(ee)
-    jkjk = [0,1,2]
-    Good = [3,4,5]
+    jkjk = [0]
+    Good = [1,2,3,4,5]
     Ggoood = [0,2]
     rr = []
     zz = []
@@ -121,9 +121,14 @@ def cam(m,i,a,v,b,n,e):
                 if vv in Ggoood:
                     zz.append(ll)
     finals = [zz[i:i+2] for i in range(0, len(zz), 2)]
-    for i in finals:
-        rr.append(i)
-    return rr
+    flat = [x for sublist in rr for x in sublist]
+    for j,i in enumerate(finals):
+        B = str(i[0])
+        flat.append(B)
+        B = str(i[1]).replace(",",".")
+        flat.append(B)
+    finalss = [flat[i:i+2] for i in range(0, len(flat), 2)]
+    return finalss
  
  
  
