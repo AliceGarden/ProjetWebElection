@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Titre</title>	
+        <title>Election Française 2017 - Premier tour</title>	
 		<script language="javascript" src="Script/GestionListe.js"></script>
 		
 		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
